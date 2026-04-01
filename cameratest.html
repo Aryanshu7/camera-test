@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Camera Test</h2>
+<video id="video" width="400" autoplay></video>
+
+<script>
+navigator.mediaDevices.getUserMedia({ video: true })
+.then(function(stream) {
+    document.getElementById("video").srcObject = stream;
+})
+.catch(function(err) {
+    alert("Camera not working: " + err);
+});
+</script>
+
+</body>
+</html>
